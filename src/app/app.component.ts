@@ -17,7 +17,7 @@ export class AppComponent {
     },
     {
       title: 'Esportes',
-      url: '/home',
+      url: '/home/sport',
       icon: 'football'
     },
     {
