@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SearchNewsService } from '../services/search-news.service';
 import { LoadingController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,12 @@ import { LoadingController } from '@ionic/angular';
 export class HomePage {
   public noticia:any = [];
   public noticiaRecente:any [];
+  public categoria:string;
   constructor(private serviceProvider: SearchNewsService,
-    private loadingController: LoadingController){
-
+    private loadingController: LoadingController, private route: ActivatedRoute){
+      
+      this.categoria = this.route.snapshot.paramMap.get('categoria');
+      console.log(this.categoria);
   }
 
   ngOnInit(): void {

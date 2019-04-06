@@ -8,11 +8,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: 'home/:categoria',
     loadChildren: './home/home.module#HomePageModule'
   },
   { path: 'tecnologia', loadChildren: './tecnologia/tecnologia.module#TecnologiaPageModule' },
-  { path: 'esportes', loadChildren: './esportes/esportes.module#EsportesPageModule' }
+  { path: 'esportes', loadChildren: './esportes/esportes.module#EsportesPageModule' },
 ];
 
 @NgModule({
