@@ -22,17 +22,17 @@ export class AppComponent {
     },
     {
       title: 'Tecnologia',
-      url: '/home',
+      url: '/home/technology',
       icon: 'save'
     },
     {
       title: 'Ciência',
-      url: '/home',
+      url: '/home/science',
       icon: 'flask'
     },
     {
       title: 'Saúde',
-      url: '/home',
+      url: '/home/health',
       icon: 'heart'
     },
     {

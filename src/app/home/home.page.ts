@@ -11,16 +11,15 @@ import { ActivatedRoute } from '@angular/router';
 export class HomePage {
   public noticia:any = [];
   public noticiaRecente:any [];
+  public categoria:string;
   constructor(private serviceProvider: SearchNewsService,
     private loadingController: LoadingController,
     private route: ActivatedRoute){
-    //  console.log(this.route.snapshot.paramMap.get("categoria")); 
+     console.log(this.route.snapshot.paramMap.get("categoria")); 
   }
 
   ngOnInit(): void {
     this.getNews();
-    
- console.log(new Date("2019-04-05T22:19:24Z").toLocaleString('pt-BR'));
   }
 
   async getNews(){
@@ -42,8 +41,7 @@ await loading.present();
     this.getNews();
     setTimeout(() => {
       event.target.complete();
-    }, 500);
+    }, 1000);
   }
-
  
 }
