@@ -11,8 +11,9 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  { path: 'tecnologia/:categoria', loadChildren: './tecnologia/tecnologia.module#TecnologiaPageModule' },
-  { path: 'esportes', loadChildren: './esportes/esportes.module#EsportesPageModule' },
+  { path: 'categoria/:categoria', loadChildren: './categoria/categoria.module#CategoriaPageModule' }
+
+ 
 ];
 
 @NgModule({

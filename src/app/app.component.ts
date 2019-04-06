@@ -17,27 +17,27 @@ export class AppComponent {
     },
     {
       title: 'Esportes',
-      url: '/home/sport',
+      url: '/categoria/sport',
       icon: 'football'
     },
     {
       title: 'Tecnologia',
-      url: '/tecnologia/sport',
+      url: '/categoria/sport',
       icon: 'save'
     },
     {
       title: 'Ciência',
-      url: '/home/science',
+      url: '/categoria/science',
       icon: 'flask'
     },
     {
       title: 'Saúde',
-      url: '/home/health',
+      url: '/categoria/health',
       icon: 'heart'
     },
     {
       title: 'Entreterimento',
-      url: '/home',
+      url: '/categoria',
       icon: 'logo-game-controller-b'
     }
   ];
