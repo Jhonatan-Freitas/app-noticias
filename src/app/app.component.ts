@@ -22,7 +22,7 @@ export class AppComponent {
     },
     {
       title: 'Tecnologia',
-      url: '/categoria/sport',
+      url: '/categoria/technology',
       icon: 'save'
     },
     {
@@ -37,8 +37,13 @@ export class AppComponent {
     },
     {
       title: 'Entreterimento',
-      url: '/categoria',
+      url: '/categoria/entertainment',
       icon: 'logo-game-controller-b'
+    },
+    {
+      title: 'Negócios',
+      url: '/categoria/business',
+      icon: 'briefcase'
     }
   ];
 
