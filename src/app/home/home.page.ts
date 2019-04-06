@@ -15,6 +15,8 @@ export class HomePage {
 
   ngOnInit(): void {
     this.getNews();
+    
+ console.log(new Date("2019-04-05T22:19:24Z").toLocaleString('pt-BR'));
   }
 
   getNews(){

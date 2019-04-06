@@ -14,7 +14,7 @@
     <div class="card-body">
       <h5 class="card-title">{{rs.title}}</h5>
       <p class="card-text">{{rs.description}}</p>
-      <p class="card-text"><small class="text-muted">{{rs.publishedAt}}</small></p>
+      <p class="card-text"><small class="text-muted">{{rs.publishedAt | date:'dd/MM/yyyy hh:mm:ss' }}</small></p>
     </div>
   </div>
 </ion-content>
