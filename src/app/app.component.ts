@@ -16,7 +16,7 @@ export class AppComponent {
       icon: 'globe'
     },
     {
-      title: 'Esportes',
+      title: 'Esporte',
       url: '/categoria/sport',
       icon: 'football'
     },
