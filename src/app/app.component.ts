@@ -22,7 +22,7 @@ export class AppComponent {
     },
     {
       title: 'Tecnologia',
-      url: '/home/technology',
+      url: '/tecnologia/sport',
       icon: 'save'
     },
     {

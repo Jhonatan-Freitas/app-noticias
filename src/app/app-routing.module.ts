@@ -8,10 +8,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'home/:categoria',
+    path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  { path: 'tecnologia', loadChildren: './tecnologia/tecnologia.module#TecnologiaPageModule' },
+  { path: 'tecnologia/:categoria', loadChildren: './tecnologia/tecnologia.module#TecnologiaPageModule' },
   { path: 'esportes', loadChildren: './esportes/esportes.module#EsportesPageModule' },
 ];
 
