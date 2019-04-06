@@ -29,4 +29,13 @@ export class HomePage {
       }
     )
   }
+
+  doRefresh(event) {
+    this.getNews();
+    setTimeout(() => {
+      event.target.complete();
+    }, 500);
+  }
+
+ 
 }
