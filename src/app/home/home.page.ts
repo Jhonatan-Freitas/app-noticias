@@ -12,6 +12,7 @@ export class HomePage {
   public noticia:any = [];
   public noticiaRecente:any [];
   public categoria:string;
+
   constructor(private serviceProvider: SearchNewsService,
     private loadingController: LoadingController,
     private route: ActivatedRoute){

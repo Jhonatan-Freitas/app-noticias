@@ -23,5 +23,8 @@
       <p class="card-text">{{rs.description}}</p>
       <p class="card-text"><small class="text-muted">{{rs.publishedAt | date:'dd/MM/yyyy hh:mm:ss' }}</small></p>
     </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item text-center"><ion-button class="btn" router-direction="forward" icon-only="" fill="clear" href="{{rs.url}}">Saiba mais<ion-icon name="arrow-forward"></ion-icon></ion-button></li>
+    </ul>
   </div>
 </ion-content>
