@@ -8,27 +8,35 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './categoria.page.html',
   styleUrls: ['./categoria.page.scss'],
 })
+
+
 export class CategoriaPage implements OnInit {
   public noticia = [];
   public title:string;
   private categoria:string;
   
-  constructor(private serviceProvider: SearchNewsService,
-    private loadingController: LoadingController,
-    private route: ActivatedRoute) {
+
+
+  constructor(private serviceProvider: SearchNewsService,private loadingController: LoadingController,private route: ActivatedRoute) {
       this.categoria = route.snapshot.paramMap.get("categoria");
       //console.log(this.categoria);
      }
 
-     getCategoria(){
-      this.serviceProvider.getByCategory(this.categoria).subscribe(
-        (data:any) => {
-          this.noticia = data.articles;
-        }, error => {
-          console.log(error);
-        }
-      )
-     }
+
+    async getCategoria(){
+      const loading = await this.loadingController.create({
+      message: 'Carregando notícias...'
+      });
+        await loading.present();
+          this.serviceProvider.getByCategory(this.categoria).subscribe(
+            (data:any) => {
+              this.noticia = data.articles;
+              loading.dismiss();
+            }, error => {
+              console.log(error);
+            }
+          )
+    }
 
      insertTitle(){
        if(this.categoria === "sport"){
@@ -50,6 +58,13 @@ export class CategoriaPage implements OnInit {
         this.title = "Saúde";
        }
       }
+
+  doRefresh(event) {
+    this.getCategoria();
+    setTimeout(() => {
+      event.target.complete();
+    }, 1000);
+  }
      
   ngOnInit() {
     this.getCategoria();

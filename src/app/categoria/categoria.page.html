@@ -8,6 +8,14 @@
 </ion-header>
 
 <ion-content>
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText=""
+      refreshingSpinner="circles"
+      refreshingText="">
+    </ion-refresher-content>
+  </ion-refresher>
   <div class="card mb-3" *ngFor="let rs of noticia">
     <img src="{{rs.urlToImage}}" class="card-img-top" alt="...">
     <div class="card-body">
