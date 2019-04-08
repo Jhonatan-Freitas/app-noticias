@@ -9,43 +9,43 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  public noticia:any = [];
-  public noticiaRecente:any [];
-  public categoria:string;
+  public noticia: any = [];
+  public noticiaRecente: any[];
+  public categoria: string;
 
   constructor(private serviceProvider: SearchNewsService,
     private loadingController: LoadingController,
-    private route: ActivatedRoute){
-     console.log(this.route.snapshot.paramMap.get("categoria")); 
+    private route: ActivatedRoute) {
+    console.log(this.route.snapshot.paramMap.get("categoria"));
   }
 
   ngOnInit(): void {
     this.getNews();
   }
 
-  async getNews(){
+  async getNews() {
     const loading = await this.loadingController.create({
       message: 'Carregando notícias...'
-});
-await loading.present();
-this.serviceProvider.getNewsRecent().subscribe(
-  (data:any) => {
-    this.noticia = data.articles;
-    loading.dismiss();
-  }, error => {
-    console.log(error);
-  }
-)
-
-  this.serviceProvider.getNewsBrazil().subscribe(
-      (data:any) => {
-        this.noticia.concat(data.articles);
+    });
+    await loading.present();
+    
+    this.serviceProvider.getNewsBrazil().subscribe(
+      (data: any) => {
+        this.noticia = data.articles;
         loading.dismiss();
       }, error => {
         console.log(error);
       }
     )
-
+    
+    this.serviceProvider.getNewsRecent().subscribe(
+      (data: any) => {
+        this.noticia = this.noticia.concat(data.articles);
+        loading.dismiss();
+      }, error => {
+        console.log(error);
+      }
+    )
   }
 
   doRefresh(event) {
@@ -54,5 +54,5 @@ this.serviceProvider.getNewsRecent().subscribe(
       event.target.complete();
     }, 1000);
   }
- 
+
 }
