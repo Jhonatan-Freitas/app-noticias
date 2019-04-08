@@ -28,14 +28,24 @@ export class HomePage {
       message: 'Carregando notícias...'
 });
 await loading.present();
-    this.serviceProvider.getNewsBrazil().subscribe(
+this.serviceProvider.getNewsRecent().subscribe(
+  (data:any) => {
+    this.noticia = data.articles;
+    loading.dismiss();
+  }, error => {
+    console.log(error);
+  }
+)
+
+  this.serviceProvider.getNewsBrazil().subscribe(
       (data:any) => {
-        this.noticia = data.articles;
+        this.noticia.concat(data.articles);
         loading.dismiss();
       }, error => {
         console.log(error);
       }
     )
+
   }
 
   doRefresh(event) {

@@ -17,7 +17,7 @@ export class SearchNewsService {
 
    //Top headlines from Globo
    getNewsBrazil():any{
-    return this.http.get<any>(`${URL_API}top-headlines?country=pt&apiKey=${KEY}`, httpOptions).pipe(
+    return this.http.get<any>(`${URL_API}top-headlines?country=br&apiKey=${KEY}`, httpOptions).pipe(
     catchError(this.handleError<any>(`Falha no getRating`))
 );
 
@@ -30,7 +30,7 @@ catchError(this.handleError<any>(`Falha no getRating`))
 );
 }
 
-
+//Search by category
 getByCategory(category:string = "general"):any{
   return this.http.get<any>(`${URL_API}top-headlines?country=br&category=${category}&apiKey=${KEY}`, httpOptions).pipe(
 catchError(this.handleError<any>(`Falha no getRating`))
