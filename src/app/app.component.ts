@@ -38,7 +38,7 @@ export class AppComponent {
     {
       title: 'Entreterimento',
       url: '/categoria/entertainment',
-      icon: 'logo-game-controller-b'
+      icon: 'happy'
     },
     {
       title: 'Negócios',

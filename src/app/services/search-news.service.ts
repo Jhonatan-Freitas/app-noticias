@@ -32,7 +32,7 @@ catchError(this.handleError<any>(`Falha no getRating`))
 
 
 getByCategory(category:string = "general"):any{
-  return this.http.get<any>(`${URL_API}top-headlines?country=pt&category=${category}&apiKey=${KEY}`, httpOptions).pipe(
+  return this.http.get<any>(`${URL_API}top-headlines?country=br&category=${category}&apiKey=${KEY}`, httpOptions).pipe(
 catchError(this.handleError<any>(`Falha no getRating`))
 );
 
